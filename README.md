@@ -1,51 +1,39 @@
-# React + TypeScript + Vite
+# Interactive Resume
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## The Goal of this project is to build a resume that shows who I am as a developer.
 
-Currently, two official plugins are available:
+The website will display:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- My personal background and talk a bit about me
+- My goals/ dreams
+- My techincal skills
+- My soft skills
+- My projects
+- My education
+- My professional experience
+- Any certifications
 
-## Expanding the ESLint configuration
+## Framework: 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Tailwind CSS
 
-- Configure the top-level `parserOptions` property like this:
+## Third Party Libraries
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- [Bitmoji potentially](https://www.bitmoji.com/)
+- [Zmoji](https://www.zmoji.me/)
+- [Avatoon](https://avatoon.me/)
+- [ToonMe](https://toonme.com/)
+- [Dollify](https://www.dollifyapp.com/)
+- [Supermii](https://supermii.cn/)
+- [Faceq](https://instasize.org/faceq.html#google_vignette)
+- [IMVU](https://secure.imvu.com/welcome/ftux/?utm_source=Google&utm_medium=Search&utm_campaign=&utm_content=Search_Web_US_Conv_BrandKW_4.23.24&utm_term=imvu&gad_source=1&gclid=CjwKCAjw59q2BhBOEiwAKc0ije96PlKZq7H_Qj0Enk4syMYuiOFqVb33UWixhPwftNxKk8qBF5QIcxoCiUsQAvD_BwE)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Concept:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# resume
+The concept of this interactive resume will be to have me shoot a basketball, everytime the player makes a shot, a point on my resume will be revealed and it will show how many shots they made vs missed. This will happen until they get to the end of my resume where it will say "You win!" along with my contact info. 
+
+## How will this be built?
+
+I will likely use react framer motion to animate the character.
+
