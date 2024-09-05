@@ -23,6 +23,7 @@ function App() {
         <ContactMe />
         <Education />
         <Experience />
+        <Instructions />
       </div>
       
     </>
