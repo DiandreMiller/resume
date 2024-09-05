@@ -26,6 +26,7 @@ function App() {
         <Instructions />
         <Projects />
         <SoftSkills />
+        <Volunteer />
       </div>
       
     </>
