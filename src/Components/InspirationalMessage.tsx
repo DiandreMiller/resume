@@ -8,14 +8,20 @@ const InspirationalMessage = () => {
 
     useEffect(() => {
         const quote: string = getRandomQuote(inspirational);
-        setMotivation(quote)
+        setMotivation(quote);
         
     }, [])
+
+    console.log('motivation:', motivation);
+
+    // if(!motivation) {
+    //     return 'This is not working!'
+    // }
 
     return (
 
         <div>
-            <h3>{motivation}</h3>
+            <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-500">{motivation}</h3>
         </div>
     )
 }
