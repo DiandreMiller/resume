@@ -1,30 +1,23 @@
 import React from "react";
+import TypeWriter from "./Typewriter";
 
 interface InstructionProps {
-  directions: string[];
+    directions: string [];
 }
 
 const Instructions: React.FC<InstructionProps> = ({ directions }) => {
-  return (
-    <div className="relative overflow-hidden inline-block border-r-2 border-black whitespace-nowrap">
-      {directions.map((direction, index) => {
-        const lengthOfDirection = direction.length;
-        const typingStyle: React.CSSProperties = {
-          width: `${lengthOfDirection}ch`,
-          animation: `typing 3s steps(${lengthOfDirection}) forwards`,
-        };
 
-        return (
-          <h5 key={index} className="inline-block" style={typingStyle}>
-            {direction}
-          </h5>
-        );
-      })}
-    </div>
-  );
-};
+    return (
+        <div>
+            {directions.map((direction, index) => (
+                <h5 key={index}>
+                    <TypeWriter text={direction} delay={100}/>
+                </h5>
+            ))}
+        </div>
+    )
 
-// export { Instructions };
+}
 
-export default Instructions;
+export default Instructions
 
