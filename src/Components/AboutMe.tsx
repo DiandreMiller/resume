@@ -1,4 +1,5 @@
 import React from "react";
+import TypeWriter from "./Typewriter";
 
 const AboutMe = () => {
 
