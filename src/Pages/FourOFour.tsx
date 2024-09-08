@@ -1,23 +1,22 @@
 import React from "react"
+import { useState, useEffect } from "react"
 import shocked from '../Assets/shocked.gif'
 import walkingAway from '../Assets/walkingAway.GIF'
-import { useState, useEffect } from "react"
+import doIt from '../Assets/doIt.GIF'
+import goodJob from '../Assets/goodJob.GIF'
+import bye from '../Assets/BYE.GIF'
 
 const FourOFour = () => {
 
     const [visibleShocker, setVisibleShocked] = useState<boolean>(true);
     const [visibleWalkingAway, setVisibleWalkingAway] = useState<boolean>(false);
+    const [visibleDoIt, setVisibleDoIt] = useState<boolean>(false);
+    const [visibleGoodJob, setVisibleGoodJob] = useState<boolean>(false);
+    const [visibleBye, setVisibleBye] = useState<boolean>(false);
 
     useEffect(() => {
         const timer: number = setTimeout(() => {
             setVisibleShocked(false);
-        }, 3000)
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        const timer: number = setTimeout(() => {
             setVisibleWalkingAway(true);
         }, 3000)
 
@@ -29,7 +28,8 @@ const FourOFour = () => {
             clearTimeout(timer);
             clearTimeout(secondTimer);
         };
-    },[]);
+        
+    }, []);
 
 
     return (
