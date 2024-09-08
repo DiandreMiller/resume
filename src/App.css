@@ -40,3 +40,41 @@
 .read-the-docs {
   color: #888;
 }
+
+/* body {
+  font-family: 'Rochester', cursive;
+} */
+
+.rochester {
+  font-family: 'Rochester', cursive;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: black;
+  }
+}
+
+.typing-effect {
+  display: inline-block;
+  width: 0; /* Start with 0 width to hide the text */
+  white-space: nowrap; /* Prevent line wrapping */
+  overflow: hidden; /* Hide the overflowing text */
+  border-right: 2px solid black; /* Simulate cursor */
+  animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+  /* typing animation with 40 steps for 40 characters */
+}
+
+
