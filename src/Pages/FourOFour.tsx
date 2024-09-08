@@ -6,14 +6,23 @@ import { useState, useEffect } from "react"
 const FourOFour = () => {
 
     const [visibleShocker, setVisibleShocked] = useState<boolean>(true);
+    const [visibleWalkingAway, setVisibleWalkingAway] = useState<boolean>(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        const timer: number = setTimeout(() => {
             setVisibleShocked(false);
         }, 3000)
 
         return () => clearInterval(timer);
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const timer: number = setTimeout(() => {
+            setVisibleWalkingAway(true);
+        }, 3000)
+
+        return () => clearInterval(timer);
+    },[]);
 
     return (
         <div>
@@ -21,7 +30,10 @@ const FourOFour = () => {
             {visibleShocker && (
                 <img src={shocked} alt="A person shocked" />
             )}
-            <img src={walkingAway} alt='A person walking away'/>
+
+            {visibleWalkingAway && (
+                <img src={walkingAway} alt='A person walking away'/>
+            )}
         </div>
     )
 
