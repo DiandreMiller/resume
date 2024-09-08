@@ -13,7 +13,7 @@ const FourOFour = () => {
             setVisibleShocked(false);
         }, 3000)
 
-        return () => clearInterval(timer);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {
@@ -21,8 +21,16 @@ const FourOFour = () => {
             setVisibleWalkingAway(true);
         }, 3000)
 
-        return () => clearInterval(timer);
+        const secondTimer: number = setTimeout(() => {
+            setVisibleWalkingAway(false);
+        }, 6000)
+
+        return () => {
+            clearTimeout(timer);
+            clearTimeout(secondTimer);
+        };
     },[]);
+
 
     return (
         <div>
