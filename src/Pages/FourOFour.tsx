@@ -1,5 +1,9 @@
+//Dependencies 
 import React from "react"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+
+//Images
 import shocked from '../Assets/shocked.gif'
 import walkingAway from '../Assets/walkingAway.GIF'
 import doIt from '../Assets/doIt.GIF'
@@ -18,15 +22,22 @@ const FourOFour = () => {
         const timer: number = setTimeout(() => {
             setVisibleShocked(false);
             setVisibleWalkingAway(true);
-        }, 3000)
+        }, 3000);
 
         const secondTimer: number = setTimeout(() => {
             setVisibleWalkingAway(false);
-        }, 6000)
+            setVisibleDoIt(true);
+        }, 6000);
+
+        const thirdTimer: number = setTimeout(() => {
+            setVisibleDoIt(false);
+        }, 11000);
+
 
         return () => {
             clearTimeout(timer);
             clearTimeout(secondTimer);
+            clearTimeout(thirdTimer);
         };
         
     }, []);
@@ -41,6 +52,10 @@ const FourOFour = () => {
 
             {visibleWalkingAway && (
                 <img src={walkingAway} alt='A person walking away'/>
+            )}
+
+            {visibleDoIt && (
+                <img src={doIt} alt="Man saying Do it!"/>
             )}
         </div>
     )

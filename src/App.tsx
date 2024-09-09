@@ -13,6 +13,7 @@ import Scoreboard from './Components/Scoreboard';
 import SoftSkills from './Components/SoftSkills';
 import Volunteer from './Components/Volunteer';
 import FourOFour from "./Pages/FourOFour";
+import Home from "./Pages/Home";
 
 
 
@@ -32,9 +33,24 @@ function App() {
   return (
     <>
       <div>
-        
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Home />} path='/' />
+            <Route element={<FourOFour />} path='*' />
+          </Routes>
+        </BrowserRouter>
 
-        {/* <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Hello world!</h1> */}
+        
+        
+      </div>
+      
+    </>
+  )
+}
+
+export default App
+
+{/* <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Hello world!</h1> */}
         {/* <AboutMe /> */}
         {/* <ContactMe /> */}
         {/* <Education /> */}
@@ -46,11 +62,3 @@ function App() {
         {/* <Hobbies /> */}
         {/* <SoftSkills /> */}
         {/* <Volunteer /> */}
-        <FourOFour />
-      </div>
-      
-    </>
-  )
-}
-
-export default App
