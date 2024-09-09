@@ -1,5 +1,9 @@
+//Dependencies 
 import React from "react"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+
+//Images
 import shocked from '../Assets/shocked.gif'
 import walkingAway from '../Assets/walkingAway.GIF'
 import doIt from '../Assets/doIt.GIF'
