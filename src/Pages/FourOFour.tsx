@@ -9,7 +9,6 @@ import walkingAway from '../Assets/walkingAway.GIF'
 import doIt from '../Assets/doIt.GIF'
 import goodJob from '../Assets/goodJob.GIF'
 import bye from '../Assets/BYE.GIF'
-import Home from "./Home"
 
 const FourOFour = () => {
 
@@ -36,15 +35,10 @@ const FourOFour = () => {
             setVisibleResume(true);
         }, 6000);
 
-        // const thirdTimer: number = setTimeout(() => {
-        //     setVisibleDoIt(false);
-        // }, 11000);
-
 
         return () => {
             clearTimeout(timer);
             clearTimeout(secondTimer);
-            // clearTimeout(thirdTimer);
         };
         
     }, []);
@@ -53,10 +47,15 @@ const FourOFour = () => {
         event.preventDefault();
         setVisibleDoIt(false);
         setVisibleGoodJob(true);
-
+        setVisibleResume(false);
         
         setTimeout(() => {
-            navigate('/')
+            setVisibleGoodJob(false);
+            setVisibleBye(true);
+
+            setTimeout(() => {
+                navigate('/');
+            }, 1500)
         }, 1500);
     }
 
@@ -64,31 +63,40 @@ const FourOFour = () => {
     return (
         <div>
             {nonExistingPage && (
-                <h1 className=""> The page you are looking for does not exist!</h1>
+                <h1 className="text-black"> The page you are looking for does not exist!</h1>
             )}
-
-            {visibleShocker && (
-                <img src={shocked} alt="A person shocked" />
-            )}
-
-            {visibleWalkingAway && (
-                <img src={walkingAway} alt='A person walking away'/>
-            )}
-
-            {visibleDoIt && (
-                <img src={doIt} alt="Man saying Do it!"/>
-            )}
-
-            {visibleResume && (
-                <h1>Click here to see <Link to='/'onClick={handleResumeClick} >My Resume</Link> </h1>
-            )}
-
-            {visibleGoodJob && (
-                <img src={goodJob} alt="A man with a medal that says good job" />
-            )}
-            
+    
+            <div className="container max-w-full mx-auto p-4">
+    
+                {visibleShocker && (
+                    <img className='w-3/4 h-auto' src={shocked} alt="A person shocked" />
+                )}
+    
+                {visibleWalkingAway && (
+                    <img className='w-3/4 h-auto' src={walkingAway} alt='A person walking away'/>
+                )}
+    
+                {visibleDoIt && (
+                    <img className='w-3/4 h-auto' src={doIt} alt="Man saying Do it!"/>
+                )}
+    
+                {visibleResume && (
+                    <h1 className="text-black">Click here to see <Link to='/' onClick={handleResumeClick}>My Resume</Link> </h1>
+                )}
+    
+                {visibleGoodJob && (
+                    <img className='w-96 h-auto' src={goodJob} alt="A man with a medal that says good job" />
+                )}
+    
+                {visibleBye && (
+                    <img className='w-96 h-auto' src={bye} alt="A man with a rocket launcher flying away with the word bye" />
+                )}
+    
+            </div>
         </div>
     )
+    
+    
 
 }
 

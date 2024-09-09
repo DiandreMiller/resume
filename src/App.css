@@ -45,6 +45,10 @@
   font-family: 'Rochester', cursive;
 } */
 
+body {
+  background-color: white;
+}
+
 .rochester {
   font-family: 'Rochester', cursive;
 }
@@ -69,12 +73,11 @@
 
 .typing-effect {
   display: inline-block;
-  width: 0; /* Start with 0 width to hide the text */
-  white-space: nowrap; /* Prevent line wrapping */
-  overflow: hidden; /* Hide the overflowing text */
-  border-right: 2px solid black; /* Simulate cursor */
+  width: 0; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  border-right: 2px solid black; 
   animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
-  /* typing animation with 40 steps for 40 characters */
 }
 
 
