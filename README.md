@@ -46,9 +46,7 @@ Tailwind CSS
 
 ## Concept:
 
-Here’s the revised version with improved grammar:
-
-The concept of this interactive resume is that I will be shooting a basketball. Every time a shot is made, a point on my resume will be revealed, along with a tally of successful shots versus missed ones. Each successful shot awards you a point, while a missed shot gives a point to the opponent. There will be a shot clock, and if it expires, the opponent will get a point. This continues until you reach the end of my resume, where a message saying "You win!" will appear, along with my contact information.
+The concept of this interactive resume is that I will be shooting a basketball. Every time a shot is made, a point on my resume will be revealed, along with a tally of successful shots versus missed ones. Each successful shot awards you a point, while a missed shot gives a point to the opponent. There will be a shot clock, and if it expires, the opponent will get a point. This continues until you reach the end of my resume, where a message saying "You win!" will appear, along with my contact information. On the contact me page, I will have a link that the user can click which can help build a resume just by a person describing what they do or by answering questions.
 
 The page will load with an inspirational message.
 
