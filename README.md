@@ -88,6 +88,11 @@ For pre-rigged characters and quick animations, Mixamo is a great option, especi
 - [Tiny5](https://fonts.google.com/specimen/Tiny5?preview.size=28)
 - [Micro 5 Charted](https://fonts.google.com/specimen/Micro+5+Charted?preview.size=28)
 
+## GIF editing software for 404 Page
+
+- (GIMP)[https://www.gimp.org/]
+
+
 ## Inspirational Message Loading Font
 
 [Rochester](https://fonts.google.com/specimen/Rochester?preview.size=28)
