@@ -106,6 +106,10 @@ I will likely use react framer motion to animate the character.
 
 [React Router Dom](https://ocxigin.hashnode.dev/link-component-in-react-router)
 
+## Inspiration and Idea for Website
+
+[Robbi Leonardi](http://www.rleonardi.com/)
+
 ## Get Started
 
 In your terminal, type:
