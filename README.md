@@ -48,6 +48,8 @@ Tailwind CSS
 [Clara.io](https://clara.io/)
 [Sculptris](https://www.sculpteo.com/en/glossary/sculptris-definition/)
 
+//Make human does not seem to be an option. It does not seem like it is working.
+
 
 * Chat GPT Recommendations 
 
