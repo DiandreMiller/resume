@@ -115,6 +115,10 @@ I will likely use react framer motion to animate the character.
 
 [Robbi Leonardi](http://www.rleonardi.com/)
 
+## Other Considerations:
+
+Material UI
+
 ## Get Started
 
 In your terminal, type:
