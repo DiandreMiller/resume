@@ -48,7 +48,9 @@ Tailwind CSS
 [Clara.io](https://clara.io/)
 [Sculptris](https://www.sculpteo.com/en/glossary/sculptris-definition/)
 
-//Make human does not seem to be an option. It does not seem like it is working.
+Make human does not seem to be an option. It does not seem like it is working.
+
+### It looks like I will go with Daz Studio to create the character
 
 
 * Chat GPT Recommendations 
