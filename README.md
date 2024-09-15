@@ -47,6 +47,12 @@ Tailwind CSS
 [Daz Studio](https://www.daz3d.com/?srsltid=AfmBOopgoMwLs3csxqH0jCsURmBxQwbcnta5-C5VLbyoo0YUZ0o4dO0A)
 [Clara.io](https://clara.io/)
 [Sculptris](https://www.sculpteo.com/en/glossary/sculptris-definition/)
+//Spline.design is also an option.
+
+
+Make human does not seem to be an option. It does not seem like it is working.
+
+### It looks like I will go with Daz Studio to create the character
 
 
 * Chat GPT Recommendations 
