@@ -131,4 +131,6 @@ In your terminal, type:
 - npm install
 - npm run dev
 
+Possibly consider 2d animations
+
 
