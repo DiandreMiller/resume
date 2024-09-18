@@ -111,6 +111,8 @@ The concept of this interactive resume is that I will be shooting a basketball. 
 
 The page will load with an inspirational message.
 
+* Figure out how to make the basketball bounce
+
 ## How will this be built?
 
 I will likely use react framer motion to animate the character.
