@@ -6,7 +6,7 @@ const HomeComponent = () => {
 
     return (
         <div>
-            <img src={scoreboard3} />
+            {/* <img src={scoreboard3} /> */}
             <BallBounce />
         </div>
 
