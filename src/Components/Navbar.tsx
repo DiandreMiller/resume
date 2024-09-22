@@ -5,7 +5,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">This is the Navbar!</h1>
+            <nav className="w-full h-16 fixed top-0 left-0 z-10" style={{ background: 'rgb(245,136,115)', transform: 'translateY(0px)' }} ></nav>
         </div>
     )
 }
