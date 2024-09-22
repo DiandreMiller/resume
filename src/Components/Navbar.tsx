@@ -15,8 +15,8 @@ const Navbar = () => {
                 
                 <Link to='/'><h2 className="lg:text-4xl start ml-32 flex items-center rochester">Diandre Miller</h2></Link>
                 <div className="ml-auto flex items-center space-x-4 mr-10">
-                <Link to='https://www.linkedin.com/in/diandre-miller/' target="blank"><img className="h-11" style={{ transform: 'translateX(-128px)'}} src={linkedIn} /></Link>
-                <Link to='https://github.com/DiandreMiller' target="blank"><img className="h-10" style={{ transform: 'translateX(-128px)'}} src={gitHub} /></Link>
+                <Link to='https://www.linkedin.com/in/diandre-miller/' target="blank"><img className="h-11 hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300" style={{ transform: 'translateX(-128px)'}} src={linkedIn} /></Link>
+                <Link to='https://github.com/DiandreMiller' target="blank"><img className="h-10 hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300" style={{ transform: 'translateX(-128px)'}} src={gitHub} /></Link>
                 </div>
                 
             </nav>
