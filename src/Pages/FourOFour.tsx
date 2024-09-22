@@ -65,15 +65,15 @@ const FourOFour = () => {
     
             <div className="container max-w-full mx-auto p-4">
             {nonExistingPage && (
-                <h1 className="text-black"> The page you are looking for does not exist!</h1>
+                <h1 className="text-black" style={{transform: 'translateY(4px)'}}> The page you are looking for does not exist!</h1>
             )}
     
                 {visibleShocker && (
-                    <img className='w-3/4 h-auto' src={shocked} alt="A person shocked" />
+                    <img className='w-2/3 h-auto' src={shocked} alt="A person shocked" />
                 )}
     
                 {visibleWalkingAway && (
-                    <img className='w-3/4 h-auto' src={walkingAway} alt='A person walking away'/>
+                    <img className='w-2/3 h-auto' src={walkingAway} alt='A person walking away'/>
                 )}
     
                 {visibleDoIt && (
