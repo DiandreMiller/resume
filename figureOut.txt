@@ -1,6 +1,7 @@
-Figure out how to make the basketball rotate
 
 Ask user if they are left handed to flip it 
+
+Make basketball stop bouncing after a certain amount of time
 
 Add shadow to the basketball
 
