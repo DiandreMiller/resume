@@ -14,6 +14,7 @@ import SoftSkills from './Components/SoftSkills';
 import Volunteer from './Components/Volunteer';
 import FourOFour from "./Pages/FourOFour";
 import Home from "./Pages/Home";
+import Navbar from "./Components/Navbar";
 
 
 
@@ -34,6 +35,7 @@ function App() {
     <>
       <div>
         <BrowserRouter>
+        <Navbar />
           <Routes>
             <Route element={<Home />} path='/' />
             <Route element={<FourOFour />} path='*' />
