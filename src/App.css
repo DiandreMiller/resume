@@ -80,4 +80,20 @@ body {
   animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
 }
 
+@keyframes cloudMove {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 50px;
+  animation: cloudMove 700s linear infinite;
+  animation-delay: 5s;
+}
+
 
