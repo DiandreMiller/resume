@@ -5,3 +5,10 @@ Ask user if they are left handed to flip it
 Add shadow to the basketball
 
 Add cloud moving through the sky
+
+Add a loading phase when entering the home page that will say welcome to my 
+interactive resume
+
+Add hamburger menu
+
+Give user the option to play a game without viewing resume after
