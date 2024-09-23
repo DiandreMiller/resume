@@ -13,3 +13,15 @@ interactive resume
 Add hamburger menu
 
 Give user the option to play a game without viewing resume after
+
+Work on backend to allow users to login and sign up in case they want a free on 
+paid account. Free account will allow users to log in and create 1 resume a month
+with limited resume option layout. 
+
+The paid version for $5 will allow you to create up to 5 resumes and 5 cover letters.
+
+The premium version will give you ulimited resume creation and cover letter creation
+for an ulimited number of jobs and suggest orther jobs you may want to apply for based
+on your skills. 
+
+
