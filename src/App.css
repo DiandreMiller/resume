@@ -96,4 +96,21 @@ body {
   animation-delay: 5s;
 }
 
+@keyframes cloudMove1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.cloud2 {
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  animation: cloudMove1 700s linear infinite;
+  animation-delay: 5s;
+}
+
 
