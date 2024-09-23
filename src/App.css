@@ -96,4 +96,54 @@ body {
   animation-delay: 5s;
 }
 
+@keyframes cloudMove2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.cloud2 {
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  animation: cloudMove2 700s linear infinite;
+  animation-delay: 5s;
+}
+
+.cloud3 {
+  position: absolute;
+  top: 50px;
+  left: 600px;
+  animation: cloudMove2 700s linear infinite;
+  animation-delay: 5s;
+}
+
+.cloud4 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  animation: cloudMove2 700s linear infinite;
+  animation-delay: 5s;
+}
+
+.cloud5 {
+  position: absolute;
+  top: 50px;
+  left: 1200px;
+  animation: cloudMove2 700s linear infinite;
+  animation-delay: 5s;
+}
+
+.cloud6 {
+  position: absolute;
+  top: 50px;
+  left: 900px;
+  animation: cloudMove2 700s linear infinite;
+  animation-delay: 5s;
+}
+
+
 
