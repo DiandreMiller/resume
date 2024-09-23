@@ -22,6 +22,11 @@ The paid version for $5 will allow you to create up to 5 resumes and 5 cover let
 
 The premium version will give you ulimited resume creation and cover letter creation
 for an ulimited number of jobs and suggest orther jobs you may want to apply for based
-on your skills. 
+on your skills, as well as allow users to keep track of their job search and 
+automatically update the user on the status of their application and allow user to 
+update manually. 
 
+Have a view my resume option in the hamburger so they can see my full pdf resume
+
+Make ball bounce x direction somewhat random. 
 
