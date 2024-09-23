@@ -34,7 +34,7 @@ const BasketballCourt = () => {
             <img className='h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
 
             {isButtonVisible && (
-                <button className="hover:-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300 button" onClick={handleGetStarted}> Click Here To Get Started!</button>
+                <button className="button" onClick={handleGetStarted}> Click Here To Get Started!</button>
             )}
             
         </div>
