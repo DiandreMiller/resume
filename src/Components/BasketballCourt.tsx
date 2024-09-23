@@ -10,6 +10,10 @@ const BasketballCourt = () => {
             <BallBounce />
             <img className='h-36 cloud' style={{ transform: 'translateY(-380px)  rotate(10deg)' }} src={cloud} alt="cloud"/>
             <img className='h-36 cloud2' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
+            <img className='h-36 cloud3' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
+            <img className='h-36 cloud4' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
+            <img className='h-36 cloud5' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
+            <img className='h-36 cloud6' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
             
         </div>
 
