@@ -7,7 +7,6 @@ const BallBounce = () => {
     const [yPosition, setYPosition] = useState<number>(0);
     const [xPosition, setXPostion] = useState<number>(0);
     const [rotation, setRotation] = useState<number>(0);
-    const [directionY, setDirectionY] = useState<number>(1);
     const [velocityX, setVelocityX] = useState<number>(2);
     const [velocityY, setVelocityY] = useState<number>(2);
 
