@@ -27,6 +27,15 @@ automatically update the user on the status of their application and allow user 
 update manually. 
 
 Have a view my resume option in the hamburger so they can see my full pdf resume
+- home
+- Meet Me 
+- Contact Me 
+- Feedback
+- Sign In
+- Build Your Own Resume (coming soon)
+- FAQ
 
-Make ball bounce x direction somewhat random. 
+(Have a terms and conditions page)
+
+
 
