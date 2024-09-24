@@ -13,7 +13,7 @@ const BasketballCourt = () => {
     const [isBannerVisible, setIsBannerVisible] = useState<boolean>(true);
     const [isNameVisible, setIsNameVisible] = useState<boolean>(true);
 
-    const handleGetStarted = () => {
+    const handleGetStarted = (): void => {
         setIsBannerVisible(false);
         setIsButtonVisible(false);
         setIsNameVisible(false);

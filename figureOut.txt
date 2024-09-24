@@ -39,5 +39,3 @@ Have a view my resume option in the hamburger so they can see my full pdf resume
 
 
 
-Make ball bounce x direction somewhat random. 
-
