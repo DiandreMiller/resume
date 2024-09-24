@@ -5,14 +5,12 @@ Make basketball stop bouncing after a certain amount of time
 
 Add shadow to the basketball
 
-Add cloud moving through the sky
 
 Add a loading phase when entering the home page that will say welcome to my 
 interactive resume
 
-Add hamburger menu
 
-Give user the option to play a game without viewing resume after
+Give user the option to play a game without viewing resume after vs cpu
 
 Work on backend to allow users to login and sign up in case they want a free on 
 paid account. Free account will allow users to log in and create 1 resume a month
@@ -34,8 +32,14 @@ Have a view my resume option in the hamburger so they can see my full pdf resume
 - Sign In
 - Build Your Own Resume (coming soon)
 - FAQ
+- Play v computer
+(Easy, Medium, Hard)
 
 (Have a terms and conditions page)
 
+The clouds reset to it's orginal position after on page too long, maybe don't 
+let it restart
 
+Build a script that would allow me to automatically build a template after naming 
+a file
 

@@ -6,8 +6,11 @@ import BallBounce from "./BallBounce";
 import cloud from '../Assets/cloud1.png'
 import banner from '../Assets/banner.png'
 
+interface HomeProps {
+    instructions: string[];
+}
 
-const BasketballCourt = () => {
+const BasketballCourt: React.FC<HomeProps> = () => {
 
     const [isButtonVisible, setIsButtonVisible] = useState<boolean>(true);
     const [isBannerVisible, setIsBannerVisible] = useState<boolean>(true);

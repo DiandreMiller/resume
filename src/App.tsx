@@ -21,6 +21,7 @@ import SignIn from "./Pages/SignIn";
 import CreateAnAccount from "./Pages/CreateAnAccount";
 import FrequentlyAskedQuestions from "./Pages/FrequentlyAskedQuestions";
 import MyProjects from "./Pages/MyProjects";
+import BuildYourOwnResume from "./Pages/BuildYourOwnResume";
 
 
 
@@ -43,12 +44,14 @@ function App() {
         <BrowserRouter>
         <Navbar />
           <Routes>
-            <Route element={<Home />} path='/' />
+          
+            <Route element={<Home instructions={instructionsArray} />} path='/' />
             <Route element={<MeetMe />} path='/meet-me' />
             <Route element={<Feedback />} path='/feedback' />
             <Route element={<SignIn />} path='/sign-in' />
             <Route element={<CreateAnAccount />} path='/create-an-account' />
             <Route element={<FrequentlyAskedQuestions />} path='/faq' />
+            <Route element={<BuildYourOwnResume />} path='/build-your-own-resume' />
             <Route element={<MyProjects />} path='/my-projects' />
             <Route element={<FourOFour />} path='*' />
           </Routes>
