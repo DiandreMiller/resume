@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import court from '../Assets/cartoon-basketball-court-vector.jpg'
 import BallBounce from "./BallBounce";
@@ -11,10 +11,12 @@ const BasketballCourt = () => {
 
     const [isButtonVisible, setIsButtonVisible] = useState<boolean>(true);
     const [isBannerVisible, setIsBannerVisible] = useState<boolean>(true);
+    const [isNameVisible, setIsNameVisible] = useState<boolean>(true);
 
     const handleGetStarted = () => {
         setIsBannerVisible(false);
         setIsButtonVisible(false);
+        setIsNameVisible(false);
     }
 
     return (
@@ -32,9 +34,14 @@ const BasketballCourt = () => {
             <img className='h-36 cloud4 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
             <img className='h-36 cloud5 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
             <img className='h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud"/>
+            <div className="flex justify-center item-center" style={{ transform: 'translateY(-180px)'}}>
+                {isNameVisible && (
+                    <h2 className="rochester lg:text-9xl" style={{color: 'rgb(255, 0, 0)'}}>Diandre Miller</h2>
+                )}
+            </div>
 
             {isButtonVisible && (
-                <button className="button" onClick={handleGetStarted}> Click Here To Get Started!</button>
+                <button className="button animate-bounce" onClick={handleGetStarted}> Click Here To Get Started!</button>
             )}
             
         </div>

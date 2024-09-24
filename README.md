@@ -120,6 +120,7 @@ I will likely use react framer motion to animate the character.
 ## Helpful documents 
 
 [React Router Dom](https://ocxigin.hashnode.dev/link-component-in-react-router)
+[Photopea](https://www.photopea.com/) for photos on text
 
 ## Inspiration and Idea for Website
 

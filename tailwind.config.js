@@ -20,9 +20,6 @@ export default {
         typing: 'typing 3s steps(20) forwards',
         blink: 'blink 1s step-end infinite'
       }
-      // fourOFourImage: {
-
-      // }
     },
   },
   plugins: [],
