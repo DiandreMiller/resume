@@ -11,10 +11,15 @@ const Navbar = () => {
     //To Do: Glow dark blue when hover on social media links
 
     const [isDropDownVisible, setIsDropDownVisible] = useState<boolean>(false);
+
     const navigate = useNavigate();
 
     const handleDropDownMenu = (): void => {
         setIsDropDownVisible(true);
+    }
+
+    const handleNavigate = (path: string): void => {
+        navigate(path);
     }
 
     return (
@@ -25,13 +30,13 @@ const Navbar = () => {
                     <div className="flex bg-red-600 h-48 w-56" style={{transform: 'translateY(64px) translateX(-72px)'}}>
                         <ul>
                             
-                            <Link to='/'><li className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Home</li></Link>
-                            <li className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Meet Me</li>
-                            <li className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Feedback</li>
-                            <li className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Sign In</li>
-                            <li className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Create An Account</li>
-                            <li className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Build Your Own Resume (Coming Soon)</li>
-                            <li className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">FAQ</li>
+                            <li onClick={()=> handleNavigate('/')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Home</li>
+                            <li onClick={()=> handleNavigate('/meet-me')}className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Meet Me</li>
+                            <li onClick={()=> handleNavigate('/feedback')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Feedback</li>
+                            <li onClick={()=> handleNavigate('/sign-in')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Sign In</li>
+                            <li onClick={()=> handleNavigate('/create-an-account')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Create An Account</li>
+                            <li onClick={()=> handleNavigate('/build-your-own-resume')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Build Your Own Resume (Coming Soon)</li>
+                            <li onClick={()=> handleNavigate('/faq')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">FAQ</li>
                         </ul>
                     </div>
                     
