@@ -21,6 +21,7 @@ import SignIn from "./Pages/SignIn";
 import CreateAnAccount from "./Pages/CreateAnAccount";
 import FrequentlyAskedQuestions from "./Pages/FrequentlyAskedQuestions";
 import MyProjects from "./Pages/MyProjects";
+import BuildYourOwnResume from "./Pages/BuildYourOwnResume";
 
 
 
@@ -49,6 +50,7 @@ function App() {
             <Route element={<SignIn />} path='/sign-in' />
             <Route element={<CreateAnAccount />} path='/create-an-account' />
             <Route element={<FrequentlyAskedQuestions />} path='/faq' />
+            <Route element={<BuildYourOwnResume />} path='/build-your-own-resume' />
             <Route element={<MyProjects />} path='/my-projects' />
             <Route element={<FourOFour />} path='*' />
           </Routes>
