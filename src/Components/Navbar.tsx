@@ -15,19 +15,22 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const handleDropDownMenu = (): void => {
-        setIsDropDownVisible(true);
+        setIsDropDownVisible(previous => !previous);
+        
     }
 
     const handleNavigate = (path: string): void => {
         navigate(path);
+        setIsDropDownVisible(false);
     }
+
 
     return (
         <div>
             <nav className="w-full h-16 fixed top-0 left-0 z-10 flex items center" style={{ background: 'rgb(245,136,115)', transform: 'translateY(0px)' }} >
                 <img onClick={handleDropDownMenu} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300 ml-2" src={hamburgerMenu} alt="options menu" />
                 {isDropDownVisible && (
-                    <div className="flex bg-red-600 h-48 w-56 absolute" style={{transform: 'translateY(64px) translateX(0px)'}}>
+                    <div className="flex bg-red-600 h-50 w-56 absolute" style={{transform: 'translateY(64px) translateX(0px)'}}>
                         <ul>
                             
                             <li onClick={()=> handleNavigate('/')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Home</li>
