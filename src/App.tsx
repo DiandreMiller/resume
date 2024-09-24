@@ -15,6 +15,11 @@ import Volunteer from './Components/Volunteer';
 import FourOFour from "./Pages/FourOFour";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
+import MeetMe from "./Pages/MeetMe";
+import Feedback from "./Pages/Feedback";
+import SignIn from "./Pages/SignIn";
+import CreateAnAccount from "./Pages/CreateAnAccount";
+import FrequentlyAskedQuestions from "./Pages/FrequentlyAskedQuestions";
 
 
 
@@ -38,6 +43,11 @@ function App() {
         <Navbar />
           <Routes>
             <Route element={<Home />} path='/' />
+            <Route element={<MeetMe />} path='/meet-me' />
+            <Route element={<Feedback />} path='/feedback' />
+            <Route element={<SignIn />} path='/sign-in' />
+            <Route element={<CreateAnAccount />} path='/create-an-account' />
+            <Route element={<FrequentlyAskedQuestions />} path='/faq' />
             <Route element={<FourOFour />} path='*' />
           </Routes>
         </BrowserRouter>
