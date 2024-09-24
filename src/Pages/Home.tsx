@@ -1,11 +1,15 @@
 import React from "react";
 import HomeComponent from "../Components/HomeComponent";
 
-const Home = () => {
+interface HomeProps {
+    instructions: string[];
+}
+
+const Home: React.FC<HomeProps> = ({instructions}) => {
 
     return (
         <div>
-            <HomeComponent />
+            <HomeComponent instructions={instructions} />
         </div>
 
     )

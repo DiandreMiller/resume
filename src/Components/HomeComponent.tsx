@@ -3,13 +3,15 @@ import scoreboard3 from '../Assets/scoreboard3.jpeg'
 import BallBounce from "./BallBounce";
 import BasketballCourt from "./BasketballCourt";
 
-const HomeComponent = () => {
+interface HomeProps {
+    instructions: string[];
+}
+
+const HomeComponent: React.FC<HomeProps> = ({instructions}) => {
 
     return (
         <div>
-            {/* <img src={scoreboard3} /> */}
-            {/* <BallBounce /> */}
-            <BasketballCourt />
+            <BasketballCourt instructions={instructions}/>
         </div>
 
     )

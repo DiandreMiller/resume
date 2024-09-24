@@ -44,7 +44,8 @@ function App() {
         <BrowserRouter>
         <Navbar />
           <Routes>
-            <Route element={<Home />} path='/' />
+          
+            <Route element={<Home instructions={instructionsArray} />} path='/' />
             <Route element={<MeetMe />} path='/meet-me' />
             <Route element={<Feedback />} path='/feedback' />
             <Route element={<SignIn />} path='/sign-in' />
