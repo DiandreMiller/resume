@@ -1,35 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { ReactTyped } from 'react-typed';
+import { v4 as uuidv4 } from 'uuid';
 
-interface TypeWriterProp {
-    text: string;
-    delay: number;
-    
-}
-
-const TypeWriter: React.FC<TypeWriterProp> = ({text, delay}) => {
+const TypeWriter = ({instructions}: {instructions: string}) => {
 
     const [currentText, setCurrentText] = useState<string>('');
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     useEffect(() => {
-        if(currentIndex < text.length) {
-            const timeOut = setTimeout(() => {
-                setCurrentText(previousText => previousText + text[currentIndex]);
-                setCurrentIndex(previousIndex => previousIndex + 1);
-            }, delay);
-
-            return () => clearTimeout(timeOut);
+        if (currentIndex < instructions.length) {
+            const timer = setTimeout(() => {
+                setCurrentText(prev => prev + instructions[currentIndex]);
+                setCurrentIndex(prev => prev + 1);
+            }, 50);
+            return () => clearTimeout(timer);
         }
-    }, [currentIndex, delay, text])
+    }, [currentIndex, instructions]);
 
-
-    
-    return (
-        <span>
-            {currentText}
-        </span>
-
-    )
+    return <div className='text-black'>{currentText}</div>;
 }
 
 export default TypeWriter;
+

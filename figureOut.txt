@@ -45,3 +45,5 @@ a file
 
 When I use an api, debounce.
 
+Figure out best AI to use
+
