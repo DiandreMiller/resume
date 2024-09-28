@@ -22,6 +22,8 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
     const [isInstructionButtonVisible, setIsInstructionButtonVisible] = useState<boolean>(false);
     const [instructionIndex, setInstructionIndex] = useState<number>(0);
 
+    //Fix the instructions so that it doesn't repeat the same instruction over and over again
+
     const handleGetStarted = (): void => {
         setIsBannerVisible(false);
         setIsButtonVisible(false);
