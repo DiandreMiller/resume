@@ -142,4 +142,6 @@ In your terminal, type:
 
 Possibly consider 2d animations
 
+Maybe consider finding characters onlone.
+
 
