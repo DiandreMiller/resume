@@ -126,6 +126,10 @@ I will likely use react framer motion to animate the character.
 
 [Robbi Leonardi](http://www.rleonardi.com/)
 
+## Helpful Reading:
+
+[Editing Text](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable)
+
 ## Other Considerations:
 
 Material UI
