@@ -38,13 +38,11 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
             const nextIndex = instructionIndex + 1;
             setInstructionIndex(nextIndex);
             setCurrentInstruction(instructions[nextIndex]);
-            setVisibleInstructions((prevInstructions) => [
-                ...prevInstructions,
-                instructions[nextIndex],
-            ]); 
             setVisibleInstructions([instructions[nextIndex]]);
         } else {
             setIsInstructionButtonVisible(false);
+            setCurrentInstruction('');
+            setVisibleInstructions([]);
         }
     }
 
