@@ -42,6 +42,7 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
                 ...prevInstructions,
                 instructions[nextIndex],
             ]); 
+            setVisibleInstructions([instructions[nextIndex]]);
         } else {
             setIsInstructionButtonVisible(false);
         }
