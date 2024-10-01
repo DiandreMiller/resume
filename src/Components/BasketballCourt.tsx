@@ -22,7 +22,7 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
     const [isInstructionButtonVisible, setIsInstructionButtonVisible] = useState<boolean>(false);
     const [instructionIndex, setInstructionIndex] = useState<number>(0);
 
-    //Fix the instructions so that it doesn't repeat the same instruction over and over again
+    //Fix Bug that if you click on home page, the instructions will always appear. 
 
     const handleGetStarted = (): void => {
         setIsBannerVisible(false);
@@ -79,11 +79,11 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
             </div>
 
             {isButtonVisible && (
-                <button className="button animate-bounce" onClick={handleGetStarted}> Click Here To Get Started!</button>
+                <button className="button animate-bounce" onClick={handleGetStarted}> Click Here To Get Started! </button>
             )}
 
             {isInstructionButtonVisible && (
-                <button className="button animate-bounce" onClick={handleContinue}> Continue</button>
+                <button className="button animate-bounce" style={{ marginTop: '300px' }} onClick={handleContinue}> Continue </button>
             )}
         </div>
     );
