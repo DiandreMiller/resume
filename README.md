@@ -142,6 +142,8 @@ In your terminal, type:
 
 Possibly consider 2d animations
 
-Maybe consider finding characters onlone.
+Maybe consider finding characters online.
+
+[Using React Spring for animations](https://chatgpt.com/c/66fcd2fb-41c0-800d-9c96-f662c1459438)
 
 
