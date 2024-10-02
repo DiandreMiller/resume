@@ -17,7 +17,14 @@ const TypeWriter = ({instructions}: {instructions: string}) => {
         }
     }, [currentIndex, instructions]);
 
-    return <div className='text-black'>{currentText}</div>;
+    return (
+        // justify-center items-center text-center 
+        <div className='flex w-full justify-center items-center'>
+            <div className='w-1/2 text-black text-4xl text-center'>
+                {currentText}
+            </div>
+        </div>
+    )
 }
 
 export default TypeWriter;

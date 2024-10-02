@@ -83,7 +83,14 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
             )}
 
             {isInstructionButtonVisible && (
-                <button className="button animate-bounce" style={{ marginTop: '300px' }} onClick={handleContinue}> Continue </button>
+                <div className="absolute left-0 right-0 bottom-[100px] flex justify-center ">
+                    <button 
+                        className="button animate-bounce" 
+                        onClick={handleContinue}
+                    > 
+                        Continue 
+                    </button>
+                </div>
             )}
         </div>
     );
