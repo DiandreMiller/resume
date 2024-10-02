@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import './App.css'
 import AboutMe from './Components/AboutMe';
 import ContactMe from './Components/ContactMe';
@@ -23,10 +24,40 @@ import FrequentlyAskedQuestions from "./Pages/FrequentlyAskedQuestions";
 import MyProjects from "./Pages/MyProjects";
 import BuildYourOwnResume from "./Pages/BuildYourOwnResume";
 
+//Loading Spinner
+import PacmanLoader from "react-spinners/PacmanLoader";
+
 
 
 
 function App() {
+
+  const [loading, setLoading] = useState<boolean>(true);
+  const [inspirationalMessage, setInspirationalMessage] = useState<React.ReactNode>(<InspirationalMessage />);
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
+
+  if(loading) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        {inspirationalMessage}
+        <PacmanLoader
+                color="#F48772"
+                cssOverride={{}}
+                loading
+                margin={0}
+                size={50}
+                speedMultiplier={1}
+            />
+      </div>
+    )
+  }
+
 
   const instructionsArray: string[] = [
     `Welcome To My Story`,
@@ -34,7 +65,11 @@ function App() {
     `In order to get to know me, you have to play a game.`,
     `You will shoot a basketball in a hoop. If you make the shot, you will get a point; if you miss, the computer scores; if you don't score before the clock runs out, the computer gets a point.`,
     `BEAT THE COMPUTER!`,
+    '...',
+    'Add instructions for shooting the basketball here.'
   ];
+
+            
   
   
 
