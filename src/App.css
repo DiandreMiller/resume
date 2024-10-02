@@ -53,6 +53,15 @@ body {
   font-family: 'Rochester', cursive;
 }
 
+.sixtyfour {
+  font-family: 'Sixtyfour Convergence', sans-serif;
+}
+
+.text-title {
+  font-family: 'Sixtyfour Convergence', sans-serif;
+  color: black;
+}
+
 @keyframes typing {
   from {
     width: 0;
