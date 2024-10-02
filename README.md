@@ -144,8 +144,10 @@ Possibly consider 2d animations
 
 Maybe consider finding characters online.
 
-(Use Gesture React Documentation)[https://use-gesture.netlify.app/docs/]
+[Use Gesture React Documentation](https://use-gesture.netlify.app/docs/)
 
 [Using React Spring for animations](https://chatgpt.com/c/66fcd2fb-41c0-800d-9c96-f662c1459438)
+
+[React Loading Documentation](https://github.com/davidhu2000/react-spinners)
 
 
