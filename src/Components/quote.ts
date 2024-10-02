@@ -1,5 +1,5 @@
 const inspirational: string[] = [
-    `Enjoy the process`,
+    `Enjoy the process - Josh Nelson`,
     `Believe you can and you're halfway there`,
     `Don't watch the clock; do what it does. Keep going`,
     `The harder you work for something, the greater you'll feel when you achieve it`,

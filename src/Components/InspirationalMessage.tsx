@@ -21,7 +21,7 @@ const InspirationalMessage = () => {
     return (
 
         <div>
-            <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-500 text-6xl font-bold rochester">{motivation}</h3>
+            <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-500 text-6xl font-bold mb-10 rochester">{motivation}</h3>
         </div>
     )
 }
