@@ -1,8 +1,9 @@
 // This component will talk about Diandre
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { BsGithub, BsLinkedin } from "react-icons/bs";
-// import Diandre from "../../Assets/DiandreMiller.jpg";
+import linkedInLogo from '../Assets/linkedInLogo.png'
+import githubLogo from '../Assets/githubLogo.png'
+import Diandre from '../Assets/DiandreFunnyPic.png'
 
 const MeetMe = () => {
   const [showAll, setShowAll] = useState(false);
@@ -18,11 +19,11 @@ const MeetMe = () => {
       <div className="flex flex-col items-center justify-center py-10">
         {/* Central Image */}
         <div className="relative">
-          {/* <img
+          <img
             src={Diandre}
             alt="Profile"
             className="w-44 h-44 rounded-full transition transform hover:scale-110 animate-flyInUp"
-          /> */}
+          />
         </div>
       </div>
       {showAll && (
@@ -65,7 +66,9 @@ const MeetMe = () => {
             >
               <strong>GitHub</strong>
             </Link>
-            {/* <BsGithub size={18} /> */}
+            <Link to="https://github.com/DiandreMiller" target="_blank" rel="noopener noreferrer">
+            <img src={githubLogo} alt="GitHub" width={30} />
+            </Link>
           </div>
           <div className="bg-blue-300 w-44 h-44 rounded-full m-2 p-4 flex flex-col items-center justify-center transition transform hover:scale-110 animate-flyInLeft">
             <Link
@@ -76,7 +79,9 @@ const MeetMe = () => {
             >
               <strong>LinkedIn</strong>
             </Link>
-            {/* <BsLinkedin size={18} /> */}
+            <Link to="https://www.linkedin.com/in/diandre-miller/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedInLogo} alt="LinkedIn" width={35} />
+            </Link>
           </div>
         </div>
       )}
