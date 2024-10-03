@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './App.css'
@@ -24,17 +23,13 @@ import FrequentlyAskedQuestions from "./Pages/FrequentlyAskedQuestions";
 import MyProjects from "./Pages/MyProjects";
 import BuildYourOwnResume from "./Pages/BuildYourOwnResume";
 
-//Loading Spinner
 import PacmanLoader from "react-spinners/PacmanLoader";
 
-
-
+//TODO: See if there are any videos on youtube on building a basketball game.
 
 function App() {
-
   const [loading, setLoading] = useState<boolean>(true);
   const [inspirationalMessage, setInspirationalMessage] = useState<React.ReactNode>(<InspirationalMessage />);
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,60 +37,60 @@ function App() {
     }, 4000);
   }, []);
 
-  if(loading) {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        {inspirationalMessage}
-        <PacmanLoader
-                color="#F48772"
-                cssOverride={{}}
-                loading
-                margin={0}
-                size={50}
-                speedMultiplier={1}
-            />
-      </div>
-    )
-  }
-
+  //TODO: Make the transition between the home page and the loading phase more smooth. 
+  const LoadingWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (loading) {
+      return (
+        <div className="flex flex-col items-center justify-center h-screen">
+          {inspirationalMessage}
+          <PacmanLoader
+            color="#F48772"
+            cssOverride={{}}
+            loading
+            margin={0}
+            size={50}
+            speedMultiplier={1}
+          />
+        </div>
+      );
+    }
+    return <>{children}</>;
+  };
 
   const instructionsArray: string[] = [
     `Welcome To My Story`,
-    `Hello everyone, my name is Diandre Miller. Thank you for taking time to get to know me. I would love for you to get to know me, and I would love to know more about you. But there's a catch.`,
+    `Hello, my name is Diandre Miller. Thank you for taking time to get to know me.`,
+    `I would love for you to get to know me, and I would love to know more about you.`, 
+    `But there's a catch.`,
     `In order to get to know me, you have to play a game.`,
-    `You will shoot a basketball in a hoop. If you make the shot, you will get a point; if you miss, the computer scores; if you don't score before the clock runs out, the computer gets a point.`,
+    `You will shoot a basketball in a hoop. If you make the shot, you will get a point; if you miss, the computer scores.`, 
+    `If you don't score before the clock runs out, the computer gets a point.`,
+    `You have one job`,
     `BEAT THE COMPUTER!`,
     '...',
-    'Add instructions for shooting the basketball here.'
+    'In order to shoot the basketball, click on the screen and drag to aim the basketball.', 
+    `When you are ready to shoot, release the mouse or touch pad.`,
+    `Tutorial Here:`
   ];
-
-            
-  
-  
 
   return (
     <>
       <div>
         <BrowserRouter>
-        <Navbar />
+          <Navbar />
           <Routes>
-          
-            <Route element={<Home instructions={instructionsArray} />} path='/' />
-            <Route element={<MeetMe />} path='/meet-me' />
-            <Route element={<Feedback />} path='/feedback' />
-            <Route element={<SignIn />} path='/sign-in' />
-            <Route element={<CreateAnAccount />} path='/create-an-account' />
-            <Route element={<FrequentlyAskedQuestions />} path='/faq' />
-            <Route element={<BuildYourOwnResume />} path='/build-your-own-resume' />
-            <Route element={<MyProjects />} path='/my-projects' />
-            <Route element={<FourOFour />} path='*' />
+            <Route path='/' element={<LoadingWrapper><Home instructions={instructionsArray} /></LoadingWrapper>} />
+            <Route path='/meet-me' element={<LoadingWrapper><MeetMe /></LoadingWrapper>} />
+            <Route path='/feedback' element={<LoadingWrapper><Feedback /></LoadingWrapper>} />
+            <Route path='/sign-in' element={<LoadingWrapper><SignIn /></LoadingWrapper>} />
+            <Route path='/create-an-account' element={<LoadingWrapper><CreateAnAccount /></LoadingWrapper>} />
+            <Route path='/faq' element={<LoadingWrapper><FrequentlyAskedQuestions /></LoadingWrapper>} />
+            <Route path='/build-your-own-resume' element={<LoadingWrapper><BuildYourOwnResume /></LoadingWrapper>} />
+            <Route path='/my-projects' element={<LoadingWrapper><MyProjects /></LoadingWrapper>} />
+            <Route path='*' element={<FourOFour />} />
           </Routes>
         </BrowserRouter>
-
-        
-        
       </div>
-      
     </>
   )
 }
