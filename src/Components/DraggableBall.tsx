@@ -1,5 +1,4 @@
 import { useSpring, animated } from "@react-spring/web";
-import { Children } from "react";
 import { useDrag } from "react-use-gesture";
 
 interface DraggableBallProps {

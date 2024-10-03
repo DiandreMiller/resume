@@ -25,6 +25,8 @@ import BuildYourOwnResume from "./Pages/BuildYourOwnResume";
 
 import PacmanLoader from "react-spinners/PacmanLoader";
 
+//TODO: See if there are any videos on youtube on building a basketball game.
+
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const [inspirationalMessage, setInspirationalMessage] = useState<React.ReactNode>(<InspirationalMessage />);
@@ -57,12 +59,18 @@ function App() {
 
   const instructionsArray: string[] = [
     `Welcome To My Story`,
-    `Hello everyone, my name is Diandre Miller. Thank you for taking time to get to know me. I would love for you to get to know me, and I would love to know more about you. But there's a catch.`,
+    `Hello, my name is Diandre Miller. Thank you for taking time to get to know me.`,
+    `I would love for you to get to know me, and I would love to know more about you.`, 
+    `But there's a catch.`,
     `In order to get to know me, you have to play a game.`,
-    `You will shoot a basketball in a hoop. If you make the shot, you will get a point; if you miss, the computer scores; if you don't score before the clock runs out, the computer gets a point.`,
+    `You will shoot a basketball in a hoop. If you make the shot, you will get a point; if you miss, the computer scores.`, 
+    `If you don't score before the clock runs out, the computer gets a point.`,
+    `You have one job`,
     `BEAT THE COMPUTER!`,
     '...',
-    'Add instructions for shooting the basketball here.'
+    'In order to shoot the basketball, click on the screen and drag to aim the basketball.', 
+    `When you are ready to shoot, release the mouse or touch pad.`,
+    `Tutorial Here:`
   ];
 
   return (
