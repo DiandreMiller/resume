@@ -1,4 +1,3 @@
-import React from "react";
 import basketball from '../Assets/basketball-removebg-preview.png'
 import { useState, useEffect } from "react";
 
