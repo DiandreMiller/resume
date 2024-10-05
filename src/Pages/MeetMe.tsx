@@ -1,4 +1,3 @@
-// This component will talk about Diandre
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import linkedInLogo from '../Assets/linkedInLogo.png'
