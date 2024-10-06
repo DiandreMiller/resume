@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import court from '../Assets/cartoon-basketball-court-vector.jpg'
 import BallBounce from "./BallBounce";
@@ -21,7 +22,7 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
     const [visibleInstructions, setVisibleInstructions] = useState<string[]>([]);
     const [isInstructionButtonVisible, setIsInstructionButtonVisible] = useState<boolean>(false);
     const [instructionIndex, setInstructionIndex] = useState<number>(0);
-
+    const navigate = useNavigate();
     //Fix Bug that if you click on home page, the instructions will always appear. 
 
     const handleGetStarted = (): void => {
@@ -43,6 +44,7 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
             setIsInstructionButtonVisible(false);
             setCurrentInstruction('');
             setVisibleInstructions([]);
+            navigate('/play-game');
         }
     }
 

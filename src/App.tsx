@@ -22,6 +22,7 @@ import CreateAnAccount from "./Pages/CreateAnAccount";
 import FrequentlyAskedQuestions from "./Pages/FrequentlyAskedQuestions";
 import MyProjects from "./Pages/MyProjects";
 import BuildYourOwnResume from "./Pages/BuildYourOwnResume";
+import PlayGame from "./Pages/PlayGame";
 
 import PacmanLoader from "react-spinners/PacmanLoader";
 
@@ -81,6 +82,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<LoadingWrapper><Home instructions={instructionsArray} /></LoadingWrapper>} />
+            <Route path='/play-game' element={<LoadingWrapper><PlayGame /></LoadingWrapper>} />
             <Route path='/meet-me' element={<LoadingWrapper><MeetMe /></LoadingWrapper>} />
             <Route path='/feedback' element={<LoadingWrapper><Feedback /></LoadingWrapper>} />
             <Route path='/sign-in' element={<LoadingWrapper><SignIn /></LoadingWrapper>} />
