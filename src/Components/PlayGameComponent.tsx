@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import court from '../Assets/cartoon-basketball-court-vector.jpg'
-// import basketball from '../Assets/basketball-removebg-preview.png'
+import net from '../Assets/net.png'
 import cloud from '../Assets/cloud1.png'
+
 import BallLaunch from "./BallLaunch";
 
 
@@ -18,7 +19,12 @@ const PlayGameComponent = () => {
             <img className='h-36 cloud5 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
             <img className='h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
 
+            <img className="h-14" style={{ position: 'absolute', top: '350px', left: '1145px' }} src={net} alt="net" />
+            <img className="h-14" style={{ position: 'absolute', top: '350px', right: '1145px' }} src={net} alt="net" />
+
             <BallLaunch />
+
+            
 
             {/* <img className="h-9" style={{ transform: 'translateY(660px) translateX(800px)' }} src={basketball} alt="basketball" /> */}
         </div>

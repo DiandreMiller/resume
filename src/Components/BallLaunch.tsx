@@ -11,7 +11,6 @@ const BallLaunch = () => {
 
 
     const gravity: number = 0.98;
-    // const bounce: number = -0.8;
     const friction: number = 0.99;
     const floorY: number = 720;
 
