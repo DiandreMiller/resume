@@ -2,15 +2,23 @@ import React, { useState, useEffect } from "react";
 import basketball from '../Assets/basketball-removebg-preview.png';
 
 const BallLaunch = () => {
-    const [yPosition, setYPosition] = useState<number>(600); 
+    const [yPosition, setYPosition] = useState<number>(660); 
     const [xPosition, setXPosition] = useState<number>(800); 
     const [velocityX, setVelocityX] = useState<number>(0);
     const [velocityY, setVelocityY] = useState<number>(0);
     const [rotation, setRotation] = useState<number>(0);
+    const [bounceEffect, setBounceEffect] = useState<number>(-0.8);
+
+
     const gravity: number = 0.98;
-    const bounce: number = -0.8;
+    // const bounce: number = -0.8;
     const friction: number = 0.99;
     const floorY: number = 720;
+
+    const leftBoundary: number = -50;
+    const rightBoundary: number = 1450;
+
+    const velocityStopped: number = 0.05;
 
  
     const handleClick = (e: React.MouseEvent) => {
@@ -33,7 +41,13 @@ const BallLaunch = () => {
                 let newY: number = previousY + velocityY;
                 if (newY >= floorY) {
                     newY = floorY;
-                    setVelocityY(velocityY * bounce); // Bounce effect
+                    setVelocityY(velocityY * bounceEffect); // Bounce effect
+
+                    if(Math.abs(velocityY) < 2) {
+                        setBounceEffect(0);
+                    } else {
+                        setBounceEffect((previousBounce) => previousBounce * 0.9);
+                    }
                 } else {
                     setVelocityY(velocityY + gravity);
                 }
@@ -41,16 +55,32 @@ const BallLaunch = () => {
             });
 
             setXPosition((previousX) => {
-                const newX: number = previousX + velocityX;
-                setVelocityX(velocityX * friction); // Slow down horizontally
+                let newX: number = previousX + velocityX;
+
+                if(newX <= leftBoundary){
+                    newX = leftBoundary;
+                    setVelocityX(-0.5 * velocityX * friction);
+                }
+                 if(newX >= rightBoundary){
+                    newX = rightBoundary;
+                    setVelocityX(-0.5 * velocityX * friction);
+                }
                 return newX;
             });
 
             setRotation((previousRotation) => previousRotation + velocityX * 5);
+            setVelocityX((previousVelocityX) => previousVelocityX * friction);
+
+            if (Math.abs(velocityX) < velocityStopped && Math.abs(velocityY) < velocityStopped) {
+                setVelocityX(0);
+                setVelocityY(0);
+            }
+            
         }, 50);
 
         return () => clearInterval(interval);
-    }, [velocityX, velocityY]);
+
+    }, [velocityX, velocityY, bounceEffect, leftBoundary, rightBoundary, friction, velocityStopped]);
 
     return (
         <div 
@@ -59,7 +89,7 @@ const BallLaunch = () => {
                 position: "relative", 
                 width: "100vw", 
                 height: "100vh", 
-                zIndex: 5, // Ensure ball is above other elements
+                zIndex: 5, 
             }}
         >
             <img
