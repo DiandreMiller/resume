@@ -7,8 +7,11 @@ const BallLaunch = () => {
     const [velocityX, setVelocityX] = useState<number>(0);
     const [velocityY, setVelocityY] = useState<number>(0);
     const [rotation, setRotation] = useState<number>(0);
+    const [bounceEffect, setBounceEffect] = useState<number>(-0.8);
+
+
     const gravity: number = 0.98;
-    const bounce: number = -0.8;
+    // const bounce: number = -0.8;
     const friction: number = 0.99;
     const floorY: number = 720;
 
@@ -38,7 +41,13 @@ const BallLaunch = () => {
                 let newY: number = previousY + velocityY;
                 if (newY >= floorY) {
                     newY = floorY;
-                    setVelocityY(velocityY * bounce); // Bounce effect
+                    setVelocityY(velocityY * bounceEffect); // Bounce effect
+
+                    if(Math.abs(velocityY) < 2) {
+                        setBounceEffect(0);
+                    } else {
+                        setBounceEffect((previousBounce) => previousBounce * 0.9);
+                    }
                 } else {
                     setVelocityY(velocityY + gravity);
                 }
@@ -71,7 +80,7 @@ const BallLaunch = () => {
 
         return () => clearInterval(interval);
 
-    }, [velocityX, velocityY]);
+    }, [velocityX, velocityY, bounceEffect, leftBoundary, rightBoundary, friction, velocityStopped]);
 
     return (
         <div 
@@ -80,7 +89,7 @@ const BallLaunch = () => {
                 position: "relative", 
                 width: "100vw", 
                 height: "100vh", 
-                zIndex: 5, // Ensure ball is above other elements
+                zIndex: 5, 
             }}
         >
             <img
