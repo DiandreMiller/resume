@@ -6,6 +6,7 @@ import court from '../Assets/cartoon-basketball-court-vector.jpg'
 import BallBounce from "./BallBounce";
 import cloud from '../Assets/cloud1.png'
 import banner from '../Assets/banner.png'
+import net from '../Assets/net.png'
 
 import Instructions from "./Instructions";
 import TypeWriter from "./Typewriter";
@@ -74,6 +75,9 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
             <img className='h-36 cloud4 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
             <img className='h-36 cloud5 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
             <img className='h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
+
+            <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', left: '1145px', zIndex: 10 }} src={net} alt="net" />
+            <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', right: '1145px', zIndex: 10 }} src={net} alt="net" />
 
             <div className="flex justify-center item-center" style={{ transform: 'translateY(-180px)' }}>
                 {isNameVisible && (

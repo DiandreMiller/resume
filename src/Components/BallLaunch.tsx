@@ -2,12 +2,23 @@ import React, { useState, useEffect } from "react";
 import basketball from '../Assets/basketball-removebg-preview.png';
 
 const BallLaunch = () => {
+    //1150 x to test net
+    //0 y to test sky
+    //660 y initial
+    //800 x initial
     const [yPosition, setYPosition] = useState<number>(660); 
     const [xPosition, setXPosition] = useState<number>(800); 
     const [velocityX, setVelocityX] = useState<number>(0);
     const [velocityY, setVelocityY] = useState<number>(0);
     const [rotation, setRotation] = useState<number>(0);
     const [bounceEffect, setBounceEffect] = useState<number>(-0.8);
+
+    //Top of right backboard is 200 y, 1200 x
+    //Bottom of right backboard is 350 y, 1200 x
+    
+
+    //Top of left backboard is 200 y, 200 x
+    //Bottom of left backboard is 350 y, 200 x
 
 
     const gravity: number = 0.98;
@@ -92,7 +103,7 @@ const BallLaunch = () => {
             }}
         >
             <img
-                className="h-9"
+                className="h-9 z-10"
                 style={{
                     position: "absolute",
                     left: `${xPosition}px`,
