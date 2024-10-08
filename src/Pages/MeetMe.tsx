@@ -4,6 +4,11 @@ import linkedInLogo from '../Assets/linkedInLogo.png'
 import githubLogo from '../Assets/githubLogo.png'
 import Diandre from '../Assets/DiandreFunnyPic.png'
 
+import blueBasketball from '../Assets/blueBasketball.png'
+import greenBasketball from '../Assets/greenBasketball.png'
+import orangeBasketball from '../Assets/orangeBasketball.png'
+import yellowBasketball from '../Assets/yellowBasketball.png'
+
 // basketball to be used on hover: https://ozerty-usa.com/products/color-fun-silent-basketball?variant=48436702216485
 
 const MeetMe = () => {
