@@ -150,4 +150,6 @@ Maybe consider finding characters online.
 
 [React Loading Documentation](https://github.com/davidhu2000/react-spinners)
 
+Add Duolingo to the website for hobbies. 
+
 
