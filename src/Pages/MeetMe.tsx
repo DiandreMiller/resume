@@ -6,6 +6,8 @@ import Diandre from '../Assets/DiandreFunnyPic.png'
 
 import blueBasketball from '../Assets/blueBasketball.png'
 import greenBasketball from '../Assets/greenBasketball.png'
+import purpleBasketball from '../Assets/purpleBasketball.png'
+import redBasketball from '../Assets/redBasketball.png'
 import orangeBasketball from '../Assets/orangeBasketball.png'
 import yellowBasketball from '../Assets/yellowBasketball.png'
 

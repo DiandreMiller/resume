@@ -32,12 +32,22 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const [inspirationalMessage, setInspirationalMessage] = useState<React.ReactNode>(<InspirationalMessage />);
+  const [score, setScore] = useState<number>(0);
+  const [computerScore, setComputerScore] = useState<number>(0);
+
+
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 4000);
   }, []);
+
+  //TODO: Make the score update on the scoreboard.
+  //If xPosition === 1150, and yPosition gets to 305, then hits 320, then 330, user scores, 
+  //else computer scores.
+
+
 
   //TODO: Make the transition between the home page and the loading phase more smooth. 
   const LoadingWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -74,6 +84,7 @@ function App() {
     `When you are ready to shoot, release the mouse or touch pad.`,
     `Tutorial Here:`
   ];
+
 
   return (
     <>
