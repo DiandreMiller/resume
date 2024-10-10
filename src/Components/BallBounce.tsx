@@ -24,6 +24,7 @@ const BallBounce = () => {
                 } else {
                     setVelocityY(velocityY + gravity);
                 }
+                console.log('newY', newY);
                 return newY;
             })
 
