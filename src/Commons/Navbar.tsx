@@ -34,6 +34,7 @@ const Navbar = () => {
                         <ul>
                             
                             <li onClick={()=> handleNavigate('/')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Home</li>
+                            <li onClick={()=> handleNavigate('/play-game')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Play Game</li>
                             <li onClick={()=> handleNavigate('/meet-me')}className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Meet Me</li>
                             <li onClick={()=> handleNavigate('/feedback')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Feedback</li>
                             <li onClick={()=> handleNavigate('/sign-in')} className="hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300">Sign In</li>

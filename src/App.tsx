@@ -14,7 +14,7 @@ import SoftSkills from './Components/SoftSkills';
 import Volunteer from './Components/Volunteer';
 import FourOFour from "./Pages/FourOFour";
 import Home from "./Pages/Home";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Commons/Navbar";
 import MeetMe from "./Pages/MeetMe";
 import Feedback from "./Pages/Feedback";
 import SignIn from "./Pages/SignIn";

@@ -55,7 +55,7 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
             <BallBounce />
             {isBannerVisible && (
                 <div className="flex justify-center">
-                    <img className='z-20' src={banner} style={{ transform: 'translateY(-300px)', width: '600px' }} alt="banner" />
+                    <img className="z-20 transform -translate-y-[300px] w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px]" src={banner} alt="banner" />
                 </div>
             )}
 
@@ -69,12 +69,12 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
                 </div>
             )}
 
-            <img className='h-36 cloud z-10' style={{ transform: 'translateY(-380px)  rotate(10deg)' }} src={cloud} alt="cloud" />
-            <img className='h-36 cloud2 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
-            <img className='h-36 cloud3 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
-            <img className='h-36 cloud4 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
-            <img className='h-36 cloud5 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
-            <img className='h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
+            <img className="sm:h-1 md:h-28 lg:h-36 cloud z-10" style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
+            <img className='sm:h-1 md:h-28 lg:h-36 cloud2 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
+            <img className='sm:h-1 md:h-28 lg:h-36 cloud3 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
+            <img className='sm:h-1 md:h-28 lg:h-36 cloud4 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
+            <img className='sm:h-1 md:h-28 lg:h-36 cloud5 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
+            <img className='sm:h-1 md:h-28 lg:h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
 
             <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', left: '1145px', zIndex: 10 }} src={net} alt="net" />
             <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', right: '1145px', zIndex: 10 }} src={net} alt="net" />
