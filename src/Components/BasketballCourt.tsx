@@ -76,8 +76,9 @@ const BasketballCourt: React.FC<HomeProps> = ({ instructions }) => {
             <img className='sm:h-1 md:h-28 lg:h-36 cloud5 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
             <img className='sm:h-1 md:h-28 lg:h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
 
-            <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', left: '1145px', zIndex: 10 }} src={net} alt="net" />
-            <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', right: '1145px', zIndex: 10 }} src={net} alt="net" />
+            <img className="h-14 z-20 absolute top-[43%] left-[79.3%]" src={net} alt="net" />
+            <img className="h-14 z-20 absolute top-[42.8%] right-[79.5%]" src={net} alt="net" />
+
 
             <div className="flex justify-center item-center" style={{ transform: 'translateY(-180px)' }}>
                 {isNameVisible && (
