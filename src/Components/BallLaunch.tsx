@@ -21,7 +21,8 @@ const BallLaunch = () => {
     const leftBoundary: number = -50;
     const rightBoundary: number = 1450;
 
-    const velocityStopped: number = 0.05;
+    const velocityStoppedX: number = 0.05;
+    const velocityStoppedY: number = 0.05;
 
 
     //Backboard Dimensions
@@ -37,7 +38,7 @@ const BallLaunch = () => {
     const leftBackboardBottom: number[] = [350, 200];
 
 
-
+    let updatedVelocityY: number = 0;
  
     const handleClick = (e: React.MouseEvent) => {
         const clickX = e.clientX; 
@@ -46,29 +47,36 @@ const BallLaunch = () => {
         // Calculate distance from current ball position to the click position
         const distanceX = clickX - xPosition;
         const distanceY = clickY - yPosition;
-        console.log('distanceX', distanceX);
-        console.log('distanceY', distanceY);
+        // console.log('distanceX', distanceX);
+        // console.log('distanceY', distanceY);
 
         // Set velocity based on distance (basic calculation)
-        const launchFactor: number = 0.06;
+        const launchFactor: number = 0.0685;
         setVelocityX(distanceX * launchFactor);
         setVelocityY(distanceY * launchFactor);
-        console.log('velocityX', velocityX);
+        updatedVelocityY += velocityY;
+        // console.log('velocityX', velocityX);
         console.log('velocityY', velocityY);
  
     };
+
+    console.log('updatedVelocityY:', velocityY);
 
     // Ball movement logic with parabolic motion
     useEffect(() => {
         const interval = setInterval(() => {
             setYPosition((previousY) => {
                 let newY: number = previousY + velocityY;
+                if (Math.abs(velocityY) < velocityStoppedY) {
+                    return floorY
+                }
                 if (newY >= floorY) {
                     newY = floorY;
                     setVelocityY(velocityY * bounceEffect);
                 } else {
-                    setVelocityY(velocityY + gravity); // Apply gravity
+                    setVelocityY(velocityY + gravity); 
                 }
+
                 // console.log('newY', newY);
                 return newY;
             });
@@ -112,15 +120,17 @@ const BallLaunch = () => {
             setVelocityX((previousVelocityX) => previousVelocityX * friction);
     
             // Stop the ball if both velocities are low
-            if (Math.abs(velocityX) < velocityStopped && Math.abs(velocityY) < velocityStopped) {
+            if (Math.abs(velocityX) < velocityStoppedX && Math.abs(velocityY) < velocityStoppedY) {
+                console.log('velicityY1:', velocityY);
                 setVelocityX(0);
                 setVelocityY(0);
             }
+            
     
         }, 50); 
     
         return () => clearInterval(interval); 
-    }, [velocityX, velocityY, bounceEffect, leftBoundary, rightBoundary, friction, velocityStopped]);
+    }, [velocityX, velocityY, bounceEffect, leftBoundary, rightBoundary, friction, velocityStoppedY, velocityStoppedX]);
     
     return (
         <div 
@@ -149,6 +159,23 @@ const BallLaunch = () => {
 };
 
 export default BallLaunch;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
