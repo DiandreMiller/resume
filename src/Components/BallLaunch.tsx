@@ -11,6 +11,9 @@ const BallLaunch = () => {
     const [velocityX, setVelocityX] = useState<number>(0);
     const [velocityY, setVelocityY] = useState<number>(0);
     const [rotation, setRotation] = useState<number>(0);
+    const [clickX, setClickX] = useState<number | null>(null);
+    const [clickY, setClickY] = useState<number | null>(null);
+    const [hasLaunched, setHasLaunched] = useState<boolean>(false);
 
 
     const bounceEffect: number = -0.8;
