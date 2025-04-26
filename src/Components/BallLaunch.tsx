@@ -28,7 +28,7 @@ const BallLaunch = () => {
     const velocityStoppedY: number = 0.05;
 
 
-    //Backboard Dimensions
+    //Backboard Dimensions.
 
     //Top of right backboard is 200 y, 1200 x
     //Bottom of right backboard is 350 y, 1200 x
