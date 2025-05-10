@@ -1,5 +1,5 @@
 import React from "react";
-import scoreboard3 from '../Assets/scoreboard3.jpeg'
+import scoreboard3 from '../Assets/scoreboard3.jpeg';
 import BasketballCourt from "./BasketballCourt";
 
 interface HomeProps {
