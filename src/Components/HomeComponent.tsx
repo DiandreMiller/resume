@@ -14,6 +14,6 @@ const HomeComponent: React.FC<HomeProps> = ({instructions}) => {
         </div>
 
     )
-}
+};
 
 export default HomeComponent;
