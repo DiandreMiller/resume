@@ -13,7 +13,7 @@ const HomeComponent: React.FC<HomeProps> = ({instructions}) => {
             <BasketballCourt instructions={instructions}/>
         </div>
 
-    );
+    )
 };
 
 export default HomeComponent;
