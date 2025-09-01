@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ReactTyped } from 'react-typed';
-import { v4 as uuidv4 } from 'uuid';
+// import { ReactTyped } from 'react-typed';
+// import { v4 as uuidv4 } from 'uuid';
+const id = crypto.randomUUID();
 
 const TypeWriter = ({instructions}: {instructions: string}) => {
 
