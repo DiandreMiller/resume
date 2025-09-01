@@ -5,10 +5,10 @@ import { Link, ScrollRestoration, useNavigate } from "react-router-dom"
 
 //Images
 import shocked from '../Assets/shocked.gif'
-import walkingAway from '../Assets/walkingAway.GIF'
-import doIt from '../Assets/doIt.GIF'
-import goodJob from '../Assets/goodJob.GIF'
-import bye from '../Assets/BYE.GIF'
+import walkingAway from '../Assets/walkingAway.gif'
+import doIt from '../Assets/doIt.gif'
+import goodJob from '../Assets/goodJob.gif'
+import bye from '../Assets/BYE.gif'
 
 const FourOFour = () => {
 
