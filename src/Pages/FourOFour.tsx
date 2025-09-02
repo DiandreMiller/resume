@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 //Images
 import shocked from "../Assets/shocked.gif";
 import walkingAway from "../Assets/walkingAway.gif";
