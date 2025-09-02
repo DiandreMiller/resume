@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import linkedInLogo from '../Assets/linkedInLogo.png'
-import githubLogo from '../Assets/githubLogo.png'
+import githubLogo from '../Assets/github-Logo.png'
 import Diandre from '../Assets/DiandreFunnyPic.png'
 
 import blueBasketball from '../Assets/blueBasketball.png'
