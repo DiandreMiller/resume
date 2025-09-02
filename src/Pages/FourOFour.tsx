@@ -4,11 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 //Images
-import shocked from "../Assets/shocked.gif";
-import walkingAway from "../Assets/walkingAway.gif";
-import doIt from "../Assets/doIt.gif";
-import goodJob from "../Assets/goodJob.gif";
-import bye from "../Assets/BYE.gif";
+import shocked from "../Assets/shocked1.gif";
+import walkingAway from "../Assets/walking-Away.gif";
+import doIt from "../Assets/do-It.gif";
+import goodJob from "../Assets/good-Job.gif";
+import bye from "../Assets/BYE1.gif";
 
 const FourOFour = () => {
   const [visibleShocker, setVisibleShocked] = useState(true);
