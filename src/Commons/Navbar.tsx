@@ -1,4 +1,3 @@
-import React from "react";
 import gitHub from '../Assets/githubLogo.png'
 import linkedIn from '../Assets/linkedInLogo.png'
 import hamburgerMenu from '../Assets/hamburgerMenu.png'
