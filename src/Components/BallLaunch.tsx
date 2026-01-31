@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import basketball from '../Assets/basketball-removebg-preview.png';
+import TrajectoryDots from './TrajectoryDots';
 
 const BallLaunch = () => {
     //1150 x to test net
@@ -11,15 +12,18 @@ const BallLaunch = () => {
     const [velocityX, setVelocityX] = useState<number>(0);
     const [velocityY, setVelocityY] = useState<number>(0);
     const [rotation, setRotation] = useState<number>(0);
-    const [clickX, setClickX] = useState<number | null>(null);
-    const [clickY, setClickY] = useState<number | null>(null);
     const [hasLaunched, setHasLaunched] = useState<boolean>(false);
 
+    /** Aim preview: shown while mouse is down, used to launch on release */
+    const [isAiming, setIsAiming] = useState<boolean>(false);
+    const [aimVelocityX, setAimVelocityX] = useState<number>(0);
+    const [aimVelocityY, setAimVelocityY] = useState<number>(0);
 
     const bounceEffect: number = -0.8;
     const gravity: number = 0.98;
     const friction: number = 0.99;
     const floorY: number = 720;
+    const launchFactor: number = 0.0685;
 
     const leftBoundary: number = -50;
     const rightBoundary: number = 1450;
@@ -40,30 +44,38 @@ const BallLaunch = () => {
     const leftBackboardTop: number[] = [200, 200];
     const leftBackboardBottom: number[] = [350, 200];
 
-
-    let updatedVelocityY: number = 0;
- 
-    const handleClick = (e: React.MouseEvent) => {
-        const clickX = e.clientX; 
-        const clickY = e.clientY; 
-
-        // Calculate distance from current ball position to the click position
-        const distanceX = clickX - xPosition;
-        const distanceY = clickY - yPosition;
-        // console.log('distanceX', distanceX);
-        // console.log('distanceY', distanceY);
-
-        // Set velocity based on distance (basic calculation)
-        const launchFactor: number = 0.0685;
-        setVelocityX(distanceX * launchFactor);
-        setVelocityY(distanceY * launchFactor);
-        updatedVelocityY += velocityY;
-        // console.log('velocityX', velocityX);
-        console.log('velocityY', velocityY);
- 
+    const updateAimFromClient = (clientX: number, clientY: number) => {
+        const distanceX = clientX - xPosition;
+        const distanceY = clientY - yPosition;
+        setAimVelocityX(distanceX * launchFactor);
+        setAimVelocityY(distanceY * launchFactor);
     };
 
-    console.log('updatedVelocityY:', velocityY);
+    const handleMouseDown = (e: React.MouseEvent) => {
+        setIsAiming(true);
+        updateAimFromClient(e.clientX, e.clientY);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (isAiming) updateAimFromClient(e.clientX, e.clientY);
+    };
+
+    const handleMouseUp = () => {
+        if (!isAiming) return;
+        setIsAiming(false);
+        setVelocityX(aimVelocityX);
+        setVelocityY(aimVelocityY);
+        setHasLaunched(true);
+    };
+
+    const handleMouseLeave = () => {
+        if (isAiming) {
+            setIsAiming(false);
+            setVelocityX(aimVelocityX);
+            setVelocityY(aimVelocityY);
+            setHasLaunched(true);
+        }
+    };
 
     // Ball movement logic with parabolic motion
     useEffect(() => {
@@ -124,9 +136,9 @@ const BallLaunch = () => {
     
             // Stop the ball if both velocities are low
             if (Math.abs(velocityX) < velocityStoppedX && Math.abs(velocityY) < velocityStoppedY) {
-                console.log('velicityY1:', velocityY);
                 setVelocityX(0);
                 setVelocityY(0);
+                setHasLaunched(false); // Allow next shot
             }
             
     
@@ -137,14 +149,31 @@ const BallLaunch = () => {
     
     return (
         <div 
-            onClick={handleClick} 
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
             style={{ 
                 position: "relative", 
                 width: "100vw", 
                 height: "100vh", 
                 zIndex: 5, 
+                cursor: isAiming ? "crosshair" : "pointer",
             }}
         >
+            {isAiming && (
+                <TrajectoryDots
+                    initialX={xPosition + 18}
+                    initialY={yPosition + 18}
+                    velocityX={aimVelocityX}
+                    velocityY={aimVelocityY}
+                    gravity={gravity}
+                    floorY={floorY}
+                    bounceEffect={bounceEffect}
+                    friction={friction}
+                    simulateBounces={true}
+                />
+            )}
             <img
                 className="h-9 z-10"
                 style={{
