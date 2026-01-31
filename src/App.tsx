@@ -1,17 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './App.css'
-import AboutMe from './Components/AboutMe';
-import ContactMe from './Components/ContactMe';
-import Education from './Components/Education';
-import Experience from './Components/Experience';
-import Hobbies from "./Components/Hobbies";
+// import AboutMe from './Components/AboutMe';
+// import ContactMe from './Components/ContactMe';
+// import Education from './Components/Education';
+// import Experience from './Components/Experience';
+// import Hobbies from "./Components/Hobbies";
 import InspirationalMessage from "./Components/InspirationalMessage";
-import Instructions from './Components/Instructions';
-import Projects from './Components/Projects';
-import Scoreboard from './Components/Scoreboard';
-import SoftSkills from './Components/SoftSkills';
-import Volunteer from './Components/Volunteer';
+// import Instructions from './Components/Instructions';
+// import Projects from './Components/Projects';
+// import Scoreboard from './Components/Scoreboard';
+// import SoftSkills from './Components/SoftSkills';
+// import Volunteer from './Components/Volunteer';
 import FourOFour from "./Pages/FourOFour";
 import Home from "./Pages/Home";
 import Navbar from "./Commons/Navbar";
