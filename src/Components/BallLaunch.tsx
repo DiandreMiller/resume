@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import basketball from '../Assets/basketball-removebg-preview.png';
 import TrajectoryDots from './TrajectoryDots';
 
-const BallLaunch = () => {
+const BALL_SIZE = 36;
+
+interface BallLaunchProps {
+    onRightBasket?: () => void;
+}
+
+const BallLaunch = ({ onRightBasket }: BallLaunchProps) => {
     //1150 x to test net
     //0 y to test sky
     //660 y initial
@@ -45,6 +51,46 @@ const BallLaunch = () => {
     const leftBackboardTop: number[] = [200, 200];
     const leftBackboardBottom: number[] = [350, 200];
 
+    const netHeight = 56;
+    const netWidth = 56;
+    const rightNetLeft = 1145;
+    const rightNetTop = 350;
+    const [containerWidth, setContainerWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1920);
+
+    useEffect(() => {
+        const onResize = () => setContainerWidth(window.innerWidth);
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, []);
+
+    const leftNetLeft = containerWidth - 1145 - netWidth;
+    const leftNetRight = containerWidth - 1145;
+
+    const hoopZoneMargin = 25;
+    const isBallInRightHoop = (x: number, y: number) => {
+        const ballCenterX = x + BALL_SIZE / 2;
+        const ballCenterY = y + BALL_SIZE / 2;
+        return (
+            ballCenterX >= rightNetLeft - hoopZoneMargin &&
+            ballCenterX <= rightNetLeft + netWidth + hoopZoneMargin &&
+            ballCenterY >= rightNetTop - hoopZoneMargin &&
+            ballCenterY <= rightNetTop + netHeight + hoopZoneMargin
+        );
+    };
+    const isBallInHoopZone = (x: number, y: number) => {
+        const ballCenterX = x + BALL_SIZE / 2;
+        const ballCenterY = y + BALL_SIZE / 2;
+        const inRightHoop = isBallInRightHoop(x, y);
+        const inLeftHoop =
+            ballCenterX >= leftNetLeft - hoopZoneMargin &&
+            ballCenterX <= leftNetRight + hoopZoneMargin &&
+            ballCenterY >= rightNetTop - hoopZoneMargin &&
+            ballCenterY <= rightNetTop + netHeight + hoopZoneMargin;
+        return inRightHoop || inLeftHoop;
+    };
+
+    const hasScoredRightThisShot = useRef(false);
+
     const updateAimFromClient = (clientX: number, clientY: number) => {
         const distanceX = clientX - xPosition;
         const distanceY = clientY - yPosition;
@@ -63,6 +109,7 @@ const BallLaunch = () => {
 
     const handleMouseUp = () => {
         if (!isAiming) return;
+        hasScoredRightThisShot.current = false;
         setIsAiming(false);
         setVelocityX(aimVelocityX);
         setVelocityY(aimVelocityY);
@@ -71,12 +118,21 @@ const BallLaunch = () => {
 
     const handleMouseLeave = () => {
         if (isAiming) {
+            hasScoredRightThisShot.current = false;
             setIsAiming(false);
             setVelocityX(aimVelocityX);
             setVelocityY(aimVelocityY);
             setHasLaunched(true);
         }
     };
+
+    useEffect(() => {
+        if (!onRightBasket) return;
+        if (isBallInRightHoop(xPosition, yPosition) && !hasScoredRightThisShot.current) {
+            hasScoredRightThisShot.current = true;
+            onRightBasket();
+        }
+    }, [xPosition, yPosition, onRightBasket]);
 
     // Ball movement logic with parabolic motion
     useEffect(() => {
@@ -151,7 +207,7 @@ const BallLaunch = () => {
                 position: "relative", 
                 width: "100vw", 
                 height: "100vh", 
-                zIndex: 5, 
+                zIndex: isBallInHoopZone(xPosition, yPosition) ? 5 : 25, 
                 cursor: isAiming ? "crosshair" : "pointer",
             }}
         >
@@ -169,13 +225,13 @@ const BallLaunch = () => {
                 />
             )}
             <img
-                className="h-9 z-10"
+                className="h-9"
                 style={{
                     position: "absolute",
                     left: `${xPosition}px`,
                     top: `${yPosition}px`,
                     transform: `rotate(${rotation}deg)`,
-                    zIndex: 10,
+                    zIndex: isBallInHoopZone(xPosition, yPosition) ? 9 : 12,
                 }}
                 src={basketball}
                 alt="basketball"
