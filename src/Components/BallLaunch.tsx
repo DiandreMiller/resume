@@ -23,13 +23,14 @@ const BallLaunch = () => {
     const gravity: number = 0.98;
     const friction: number = 0.99;
     const floorY: number = 720;
+    const ceilingY: number = 0;
     const launchFactor: number = 0.0685;
 
     const leftBoundary: number = -50;
     const rightBoundary: number = 1450;
 
-    const velocityStoppedX: number = 0.05;
-    const velocityStoppedY: number = 0.05;
+    const velocityStoppedX: number = 0.08;
+    const velocityStoppedY: number = 0.08;
 
 
     //Backboard Dimensions.
@@ -82,70 +83,63 @@ const BallLaunch = () => {
         const interval = setInterval(() => {
             setYPosition((previousY) => {
                 let newY: number = previousY + velocityY;
-                if (Math.abs(velocityY) < velocityStoppedY) {
-                    return floorY
+                if (Math.abs(velocityY) < velocityStoppedY && previousY >= floorY - 2) {
+                    setVelocityY(0);
+                    return floorY;
                 }
-                if (newY >= floorY) {
+                if (newY < ceilingY) {
+                    newY = ceilingY;
+                    setVelocityY(-velocityY * 0.5);
+                } else if (newY >= floorY) {
                     newY = floorY;
                     setVelocityY(velocityY * bounceEffect);
                 } else {
-                    setVelocityY(velocityY + gravity); 
+                    setVelocityY(velocityY + gravity);
                 }
-
-                // console.log('newY', newY);
                 return newY;
             });
-    
+
             setXPosition((previousX) => {
                 let newX: number = previousX + velocityX;
-    
-                // Collision with right backboard
+                let newVelX: number = velocityX * friction;
+
                 if (
-                    newX + 15 >= rightBackboardTop[1] && 
-                    yPosition >= rightBackboardTop[0] && 
+                    newX + 15 >= rightBackboardTop[1] &&
+                    yPosition >= rightBackboardTop[0] &&
                     yPosition <= rightBackboardBottom[0]
                 ) {
-                    newX = rightBackboardTop[1] - 15; 
-                    setVelocityX(-0.8 * velocityX * friction); 
-                }
-                
-                // Collision with left backboard
-                if (
+                    newX = rightBackboardTop[1] - 15;
+                    newVelX = -0.8 * velocityX * friction;
+                } else if (
                     newX - 15 <= leftBackboardTop[1] &&
                     yPosition >= leftBackboardTop[0] &&
                     yPosition <= leftBackboardBottom[0]
                 ) {
-                    newX = leftBackboardTop[1] + 15; // Adjust X position
-                    setVelocityX(-0.8 * velocityX * friction); // Reverse X velocity
+                    newX = leftBackboardTop[1] + 15;
+                    newVelX = -0.8 * velocityX * friction;
+                } else if (newX <= leftBoundary) {
+                    newX = leftBoundary;
+                    newVelX = -0.6 * velocityX * friction;
+                } else if (newX >= rightBoundary) {
+                    newX = rightBoundary;
+                    newVelX = -0.6 * velocityX * friction;
                 }
-    
-                // Check boundaries
-                if (newX <= leftBoundary) {
-                    newX = leftBoundary; 
-                    setVelocityX(-0.5 * velocityX * friction); 
-                }
-                if (newX >= rightBoundary) {
-                    newX = rightBoundary; 
-                    setVelocityX(-0.5 * velocityX * friction); 
-                }
+
+                setVelocityX(newVelX);
                 return newX;
             });
-    
+
             setRotation((previousRotation) => previousRotation + velocityX * 5);
-            setVelocityX((previousVelocityX) => previousVelocityX * friction);
-    
-            // Stop the ball if both velocities are low
+
             if (Math.abs(velocityX) < velocityStoppedX && Math.abs(velocityY) < velocityStoppedY) {
                 setVelocityX(0);
                 setVelocityY(0);
-                setHasLaunched(false); // Allow next shot
+                setHasLaunched(false);
             }
-            
-    
-        }, 50); 
-    
-        return () => clearInterval(interval); 
-    }, [velocityX, velocityY, bounceEffect, leftBoundary, rightBoundary, friction, velocityStoppedY, velocityStoppedX]);
+        }, 50);
+
+        return () => clearInterval(interval);
+    }, [velocityX, velocityY, bounceEffect, leftBoundary, rightBoundary, friction, velocityStoppedY, velocityStoppedX, floorY, ceilingY, yPosition]);
     
     return (
         <div 
