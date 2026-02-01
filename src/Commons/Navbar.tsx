@@ -1,6 +1,7 @@
-import gitHub from '../Assets/githubLogo.png'
-import linkedIn from '../Assets/linkedInLogo.png'
-import hamburgerMenu from '../Assets/hamburgerMenu.png'
+import gitHub from '../Assets/githubLogo.png';
+import linkedIn from '../Assets/linkedInLogo.png';
+import hamburgerMenu from '../Assets/hamburgerMenu.png';
+import DreDev from '../Assets/DevDreGrey.png';
 
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -51,6 +52,7 @@ const Navbar = () => {
                 <div className="ml-auto flex items-center space-x-4 mr-10">
                 <Link to='https://www.linkedin.com/in/diandre-miller/' target="blank"><img className="h-11 hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300" style={{ transform: 'translateX(-128px)'}} src={linkedIn} /></Link>
                 <Link to='https://github.com/DiandreMiller' target="blank"><img className="h-10 hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300" style={{ transform: 'translateX(-128px)'}} src={gitHub} /></Link>
+                <Link to='https://diandremillerdev.netlify.app/' target="blank"><img className="h-11 hover:shadow-[0_0_20px_5px_rgba(0,245,136,115)] transition duration-300" style={{ transform: 'translateX(-128px)'}} src={DreDev} /></Link>
                 </div>
                 
             </nav>
