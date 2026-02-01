@@ -1,17 +1,19 @@
-import React, {useState} from "react";
+import React, { useState, useCallback } from "react";
 import court from '../Assets/cartoon-basketball-court-vector.jpg'
 import net from '../Assets/net.png'
 import cloud from '../Assets/cloud1.png'
 
 import BallLaunch from "./BallLaunch";
+import GameScoreboard from "./GameScoreboard";
 
+const PlayGameComponent = () => {
+    const [guestScore, setGuestScore] = useState(0);
+    const handleRightBasket = useCallback(() => setGuestScore((s) => s + 1), []);
 
-
-const PlayGameComponent = () => { 
     return (
-        <div className="w-screen h-screen bg-cover bg-center transform -translate-x-28 p-0 overflow-x-hidden" style={{ backgroundImage: `url(${court})` }}>
-            
-           
+        <div className="w-screen h-screen bg-cover bg-center transform -translate-x-28 p-0 overflow-x-hidden relative" style={{ backgroundImage: `url(${court})` }}>
+            <GameScoreboard homeScore={0} guestScore={guestScore} />
+
             <img className='sm:h-1 md:h-28 lg:h-36 cloud z-10' style={{ transform: 'translateY(-380px)  rotate(10deg)' }} src={cloud} alt="cloud" />
             <img className='sm:h-1 md:h-28 lg:h-36 cloud2 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
             <img className='sm:h-1 md:h-28 lg:h-36 cloud3 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
@@ -19,10 +21,10 @@ const PlayGameComponent = () => {
             <img className='sm:h-1 md:h-28 lg:h-36 cloud5 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
             <img className='sm:h-1 md:h-28 lg:h-36 cloud6 z-10' style={{ transform: 'translateY(-380px) rotate(10deg)' }} src={cloud} alt="cloud" />
 
-            <img className="h-14 z-11" style={{ position: 'absolute', top: '350px', left: '1145px' }} src={net} alt="net" />
-            <img className="h-14 z-11" style={{ position: 'absolute', top: '350px', right: '1145px' }} src={net} alt="net" />
+            <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', left: '1145px', zIndex: 20 }} src={net} alt="net" />
+            <img className="h-14 z-20" style={{ position: 'absolute', top: '350px', right: '1145px', zIndex: 20 }} src={net} alt="net" />
 
-            <BallLaunch />
+            <BallLaunch onRightBasket={handleRightBasket} />
 
             
 
