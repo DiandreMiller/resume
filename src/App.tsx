@@ -45,7 +45,7 @@ function App() {
 
   //TODO: Make the score update on the scoreboard
   //If xPosition === 1150, and yPosition gets to 305, then hits 320, then 330, user scores, 
-  //else computer scores.
+  //else computer scores
 
 
 
