@@ -27,7 +27,7 @@ import PlayGame from "./Pages/PlayGame";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
 //TODO: See if there are any videos on youtube on building a basketball game.
-//Fix transition in between pages.
+//Fix transition in between pages
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
