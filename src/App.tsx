@@ -26,7 +26,7 @@ import PlayGame from "./Pages/PlayGame";
 
 import PacmanLoader from "react-spinners/PacmanLoader";
 
-//Todo
+//Todo:
 //Fix transition in between pages
 
 function App() {
